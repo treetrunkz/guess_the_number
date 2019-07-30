@@ -4,7 +4,23 @@
 # a game in which the player guesses a randomly generated number
 
 import random
+import re
 
+
+def run(userNumber): 
+  
+    # Make own character set and pass  
+    # this as argument in compile method 
+    regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]') 
+      
+    # Pass the string in search  
+    # method of regex object.     
+    if(regex.search(userNumber) == None): 
+        print("String is accepted") 
+          
+    else: 
+        print("String is not accepted.")
+      
 # assign global variables
 userNumber = 0
 roundsPlayed = 0
@@ -24,7 +40,9 @@ computerNumber = random.randint(1, 20)
 while userNumber != computerNumber:
     print()
     userNumber = input('Take a guess: ')
-
+    # calling a variable inside of the function (an argument).
+    run(userNumber)
+    
     # to create an exit situation with option to play another match
     if userNumber.lower() == 'exit':
         print('You played a good game! The number I chose was: ' + str(computerNumber))
