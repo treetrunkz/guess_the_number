@@ -24,7 +24,6 @@ computerNumber = random.randint(1, 20)
 while userNumber != computerNumber:
     print()
     userNumber = input('Take a guess: ')
-    roundsPlayed += 1
 
     # to create an exit situation with option to play another match
     if userNumber.lower() == 'exit':
@@ -84,11 +83,13 @@ while userNumber != computerNumber:
 
     # if number guessed is lower than the computer number
     elif int(userNumber) < computerNumber:
-        print('\033[1m{}\033[0m'.format(userNumber) + ' is too low.  Try again.')
+        print(userNumber + ' is too low.  Try again.')
+        roundsPlayed += 1
 
     # if the number guessed is higher than the computer number
     elif int(userNumber) > computerNumber:
-        print('\033[1m{}\033[0m'.format(userNumber) + ' is too high. Try again.')
+        print(userNumber + ' is too high. Try again.')
+        roundsPlayed += 1
 
     # if the number guessed is identical to the computer number
     else:
