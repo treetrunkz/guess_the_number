@@ -1,3 +1,8 @@
+# Joanna Folk
+# 07/29/2019
+# guess_the_number
+# a game in which the player guesses a randomly generated number
+
 import random
 
 # assign global variables
